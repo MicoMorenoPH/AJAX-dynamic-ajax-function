@@ -1,0 +1,40 @@
+//event
+$(document).on('click', '#btnLoad', function () {
+    dtl = []; vdtl = {};
+    vdtl["status"] = $('#cboStatus').val();
+    dtl.push(vdtl);
+
+    NAjax('/Maintenance/showUserHdr', dtl, function (data) {
+        if (data.length > 0) {
+            tmp = ""; tmpTable = "";
+            $('#d-dtl').empty();
+            for (key in data) {
+                tmp = data[key];
+                if (tmp.retValue == true) {
+                    ..do something here
+                } else {
+                    ..do something here
+                }
+            }
+        }
+    });
+});
+
+
+//ajax function dynamic
+var dtl = [];
+
+function NAjax(url, jParam, callback) {
+    console.log(jParam);
+    $.ajax({
+        url: url,
+        type: "post",
+        dataType: "json",
+        data: {
+            sysParam: jParam,
+        },
+        success: function (data) {
+            callback(data);
+        }
+    });
+}
