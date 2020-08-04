@@ -1,4 +1,4 @@
-//event
+//EVENT
 $(document).on('click', '#btnLoad', function () {
     dtl = []; vdtl = {};
     vdtl["status"] = $('#cboStatus').val();
@@ -21,7 +21,7 @@ $(document).on('click', '#btnLoad', function () {
 });
 
 
-//ajax function dynamic
+//JS FUNCTION AJAX
 var dtl = [];
 
 function NAjax(url, jParam, callback) {
